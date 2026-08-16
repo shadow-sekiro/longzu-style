@@ -49,3 +49,8 @@ next-env.d.ts
 /data/corpus.bin
 /data/corpus.chunks
 /data/corpus.meta.json
+# 本地临时文件（构建/提交辅助，勿提交）
+/build_err.log 
+/commit_msg.txt 
+/do_push.bat 
+/tsc_err.log 
