@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="gold" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="45%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a6d1a"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0d12"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- 龙瞳外形 -->
+  <path d="M8 32 C20 16, 44 16, 56 32 C44 48, 20 48, 8 32 Z"
+        fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <!-- 虹膜 -->
+  <circle cx="32" cy="32" r="12" fill="url(#gold)"/>
+  <!-- 竖瞳 -->
+  <ellipse cx="32" cy="32" rx="3.2" ry="11" fill="#0d0d12"/>
+  <!-- 高光 -->
+  <circle cx="27" cy="27" r="2.4" fill="#fff6da" opacity="0.9"/>
+</svg>

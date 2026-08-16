@@ -1,0 +1,51 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/.lzb/
+/.lzc/
+/.nxbuild/
+/.lzd/
+/out/
+
+# local dev artifacts
+dev.log
+dev.err
+dev3400.log
+dev3400.err
+dev3500.log
+dev3500.err
+server3100.log
+server3100.err
+cleanup.py
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files (含密钥，绝不提交)
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# 构建产物（含原著片段向量，限个人使用，勿提交/分发）
+/data/corpus.json
+/data/corpus.jsonl
+/data/corpus.partial.jsonl
+/data/corpus.bin
+/data/corpus.chunks
+/data/corpus.meta.json

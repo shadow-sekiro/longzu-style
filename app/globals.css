@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0a0a0a;
+  --color-ink-900: #141414;
+  --color-ink-800: #1c1c1c;
+  --color-gold: #b8860b;
+  --color-gold-light: #d4af37;
+  --color-gold-deep: #8b6d1b;
+  --color-blood: #8b0000;
+  --color-ash: #e0e0e0;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -10%, #1a1a1a 0%, #0a0a0a 55%),
+    linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
+  background-attachment: fixed;
+  color: var(--color-ash);
+  font-family: "Noto Sans SC", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 字体工具类（运行时通过 <link> 加载 Google Fonts） */
+.font-display {
+  font-family: "Cinzel", "Noto Serif SC", serif;
+}
+
+.font-serif-sc {
+  font-family: "Noto Serif SC", serif;
+}
+
+.font-sans-sc {
+  font-family: "Noto Sans SC", system-ui, sans-serif;
+}
+
+/* 暗金装饰细线 */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 134, 11, 0.7),
+    transparent
+  );
+}
+
+/* 暗金发光文本 */
+.text-glow-gold {
+  color: var(--color-gold-light);
+  text-shadow:
+    0 0 8px rgba(184, 134, 11, 0.5),
+    0 0 18px rgba(184, 134, 11, 0.25);
+}
+
+/* 按钮金色光晕 */
+.btn-glow:hover {
+  box-shadow:
+    0 0 14px rgba(184, 134, 11, 0.55),
+    0 0 28px rgba(184, 134, 11, 0.3);
+}
+
+/* 结果卡片金色灼烧边缘 */
+.card-burn {
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  box-shadow:
+    0 0 30px rgba(184, 134, 11, 0.12),
+    inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a2f10;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-deep);
+}
+
+/* 占位符颜色 */
+::placeholder {
+  color: rgba(224, 224, 224, 0.35);
+}
