@@ -55,7 +55,7 @@ const HOOKS = [
   '写出少年的无知恰恰是最锋利的——他还不知道自己已站在某个入口',
 ];
 
-function pick<T>(arr: T[], n: number, exclude: Set<string>): T[] {
+function pick<T extends string>(arr: T[], n: number, exclude: Set<string>): T[] {
   const pool = arr.filter((x) => !exclude.has(x));
   const src = pool.length >= n ? pool : arr;
   const copy = [...src];

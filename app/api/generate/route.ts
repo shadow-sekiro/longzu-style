@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers';
 import { SYSTEM_PROMPT, buildUserInstruction } from '@/lib/prompts';
 import { validateInput, estimateMaxTokens, countSentences } from '@/lib/utils';
 import { checkRateLimit } from '@/lib/rateLimit';
@@ -36,7 +37,8 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   // 设备身份：匿名 did cookie，缺失回退 IP
-  const did = request.cookies.get('did')?.value || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  const didCookie = (await cookies()).get('did')?.value;
+  const did = didCookie || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
 
   if (!process.env.DASHSCOPE_API_KEY) {
     return Response.json({ error: '服务端尚未配置 API Key，请联系管理员' }, { status: 500 });
