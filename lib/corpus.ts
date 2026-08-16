@@ -97,6 +97,6 @@ export async function retrieve(queryVec: number[], topK = 3): Promise<CorpusItem
   return out;
 }
 
-// 后台预热：模块加载即触发二进制语料加载（命中全局缓存），
-// 首次生成直接复用，消除「首次加载 1.2GB 语料」的卡顿。不阻塞模块导出。
-loadCorpus().catch((e) => console.error('[corpus] 预热失败：', e));
+// 注意：不在模块加载期预热 corpus.bin。Vercel 等云端环境没有该文件（被 .gitignore 排除），
+// 若在此处顶层 readFile 会触发 next build 的 "Collecting page data" 阶段 ENOENT 报错并导致构建失败。
+// 改为首次 retrieve 时惰性加载（命中 globalThis 缓存，运行时约 4ms），云端无语料则平滑降级为空结果。
