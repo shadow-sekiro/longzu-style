@@ -54,3 +54,5 @@ next-env.d.ts
 /commit_msg.txt 
 /do_push.bat 
 /tsc_err.log 
+/cleanup_push.bat 
+/commit_msg2.txt 
